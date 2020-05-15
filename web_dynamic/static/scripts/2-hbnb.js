@@ -1,6 +1,6 @@
 $(document).ready(init);
 
-const HOST = '0.0.0.0';
+const HOST = 'localhost';
 
 function init () {
   const amenityObj = {};

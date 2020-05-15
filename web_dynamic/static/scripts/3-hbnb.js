@@ -37,11 +37,22 @@ function fetchPlaces () {
     headers: { 'Content-Type': 'application/json' },
     data: JSON.stringify({}),
     success: function (response) {
-      console.log(response);
-      for (let r of response) {
-        let $titleBox = $('<div class="title_box"></div>');
-        let article = $('<article></article>');
-	$('SECTION.places').append(article);
+      for (const r of response) {
+        const article = ['<article>',
+          '<div class="title_box">',
+        `<h2>${r.name}</h2>`,
+        `<div class="price_by_night">$${r.price_by_night}</div>`,
+        '</div>',
+        '<div class="information">',
+        `<div class="max_guest">${r.max_guest} Guest(s)</div>`,
+        `<div class="number_rooms">${r.number_rooms} Bedroom(s)</div>`,
+        `<div class="number_bathrooms">${r.number_bathrooms} Bathroom(s)</div>`,
+        '</div>',
+        '<div class="description">',
+        `${r.description}`,
+        '</div>',
+        '</article>'];
+        $('SECTION.places').append(article.join(''));
       }
     },
     error: function (error) {
