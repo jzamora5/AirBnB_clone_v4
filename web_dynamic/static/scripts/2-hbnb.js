@@ -12,16 +12,16 @@ function init () {
     $('.amenities h4').text(names.sort().join(', '));
   });
 
-  api_status();
+  apiStatus();
 }
 
-function api_status () {
+function apiStatus () {
   const API_URL = 'http://localhost:5001/api/v1/status/';
   $.get(API_URL, (data, textStatus) => {
     if (textStatus === 'success' && data.status === 'OK') {
-      $('DIV#api_status').addClass('available');
+      $('#api_status').addClass('available');
     } else {
-      $('DIV#api_status').removeClass('available');
+      $('#api_status').removeClass('available');
     }
   });
 }
