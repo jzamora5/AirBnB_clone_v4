@@ -1,6 +1,6 @@
 $(document).ready(init);
 
-const HOST = '0.0.0.0';
+const HOST = 'localhost';
 
 function init () {
   const amenityObj = {};
@@ -15,6 +15,7 @@ function init () {
   });
 
   apiStatus();
+  fetchPlaces();
 }
 
 function apiStatus () {
@@ -24,6 +25,27 @@ function apiStatus () {
       $('#api_status').addClass('available');
     } else {
       $('#api_status').removeClass('available');
+    }
+  });
+}
+
+function fetchPlaces () {
+  const PLACES_URL = `http://${HOST}:5001/api/v1/places_search/`;
+  $.ajax({
+    url: PLACES_URL,
+    type: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    data: JSON.stringify({}),
+    success: function (response) {
+      console.log(response);
+      for (let r of response) {
+        let $titleBox = $('<div class="title_box"></div>');
+        let article = $('<article></article>');
+	$('SECTION.places').append(article);
+      }
+    },
+    error: function (error) {
+      console.log(error);
     }
   });
 }
