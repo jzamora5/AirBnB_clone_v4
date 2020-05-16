@@ -2,6 +2,7 @@ $(document).ready(init);
 
 const HOST = '0.0.0.0';
 const amenityObj = {};
+
 function init () {
   $('.amenities .popover input').change(function () {
     if ($(this).is(':checked')) {
