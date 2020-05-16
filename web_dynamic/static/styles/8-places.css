@@ -96,6 +96,39 @@
     width: 100px;
 }
 
-.user {
-  margin-bottom: 1.5%;
+.reviews {
+    margin-top: 40px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-flow: column;
+}
+
+.reviews h2 {
+    display: flex;
+    justify-content: inherit;
+    font-size: 16px;
+    width: 100%;
+    border-bottom: solid #DDDDDD 1px;
+}
+
+.reviews span:last-child {
+    cursor: pointer;
+    font-weight: initial;
+}
+.reviews ul {
+    list-style: none;
+    padding: 0;
+}
+
+.reviews ul li h3 {
+    font-size: 14px;
+}
+
+,reviews ul li p {
+    font-size: 12px;
+}
+
+.treview {
+    font-weight: bold;
 }
