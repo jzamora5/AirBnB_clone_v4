@@ -4,7 +4,6 @@ const HOST = 'localhost';
 const amenityObj = {};
 const stateObj = {};
 const cityObj = {};
-let reviewObj = {};
 let obj = {};
 
 function init () {
@@ -13,6 +12,7 @@ function init () {
   $('.city_input').change(function () { obj = cityObj; checkedObjects.call(this, 3); });
   apiStatus();
   searchPlaces();
+  showReviews();
 }
 
 function checkedObjects (nObject) {
@@ -42,7 +42,6 @@ function apiStatus () {
 
 function searchPlaces () {
   const PLACES_URL = `http://${HOST}:5001/api/v1/places_search/`;
-  reviewObj = {};
   $.ajax({
     url: PLACES_URL,
     type: 'POST',
@@ -68,21 +67,62 @@ function searchPlaces () {
           '<div class="description">',
           `${r.description}`,
           '</div>',
-          `<div id="${r.id}" class="reviews"><h2></h2></div>`,
+          '<div class="reviews"><h2>',
+          `<span id="${r.id}n" class="treview">Reviews</span>`,
+          `<span id="${r.id}" onclick="showReviews(this)">Show</span></h2>`,
+          `<ul id="${r.id}r"></ul>`,
+          '</div>',
           '</article>'];
         $('SECTION.places').append(article.join(''));
-
-        $.get(`http://${HOST}:5001/api/v1/places/${r.id}/reviews`, (data, textStatus) => {
-          if (textStatus === 'success') {
-            reviewObj[r.id] = data;
-	    $(`#${r.id} h2`).text(`${data.length} Review(s)`);
-          }
-        });
       }
-      console.log(reviewObj);
     },
     error: function (error) {
       console.log(error);
     }
   });
+}
+
+function showReviews (obj) {
+  if (obj === undefined) {
+    return;
+  }
+  if (obj.textContent === 'Show') {
+    obj.textContent = 'Hide';
+    $.get(`http://${HOST}:5001/api/v1/places/${obj.id}/reviews`, (data, textStatus) => {
+      if (textStatus === 'success') {
+        $(`#${obj.id}n`).html(data.length + ' Reviews');
+        for (const review of data) {
+          printReview(review, obj);
+        }
+      }
+    });
+  } else {
+    obj.textContent = 'Show';
+    $(`#${obj.id}n`).html('Reviews');
+    $(`#${obj.id}r`).empty();
+  }
+}
+
+function printReview (review, obj) {
+  const date = new Date(review.created_at);
+  const month = date.toLocaleString('en', { month: 'long' });
+  const day = dateOrdinal(date.getDate());
+
+  if (review.user_id) {
+    $.get(`http://${HOST}:5001/api/v1/users/${review.user_id}`, (data, textStatus) => {
+      if (textStatus === 'success') {
+        $(`#${obj.id}r`).append(
+          `<li><h3>From ${data.first_name} ${data.last_name} the ${day + ' ' + month + ' ' + date.getFullYear()}</h3>
+          <p>${review.text}</p>
+          </li>`);
+      }
+    });
+  }
+}
+
+function dateOrdinal (dom) {
+  if (dom === 31 || dom === 21 || dom === 1) return dom + 'st';
+  else if (dom === 22 || dom === 2) return dom + 'nd';
+  else if (dom === 23 || dom === 3) return dom + 'rd';
+  else return dom + 'th';
 }
