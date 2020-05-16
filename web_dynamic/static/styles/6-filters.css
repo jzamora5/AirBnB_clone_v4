@@ -41,7 +41,7 @@ button:hover {
     font-weight: 400;
     font-size: 14px;
     height: 20px;
-    width: 100%;
+    width: 80%;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -77,6 +77,10 @@ button:hover {
     padding: 10px 0;
     margin-left: -5px;
     margin-top: -5px;
+}
+
+.state_input, .city_input {
+    margin-right: 10px;
 }
 
 .amenities .popover ul li input {
