@@ -1,9 +1,10 @@
 $(document).ready(init);
 
-const HOST = '0.0.0.0';
+const HOST = 'localhost';
 const amenityObj = {};
 const stateObj = {};
 const cityObj = {};
+let reviewObj = {};
 let obj = {};
 
 function init () {
@@ -41,6 +42,7 @@ function apiStatus () {
 
 function searchPlaces () {
   const PLACES_URL = `http://${HOST}:5001/api/v1/places_search/`;
+  reviewObj = {};
   $.ajax({
     url: PLACES_URL,
     type: 'POST',
@@ -66,9 +68,18 @@ function searchPlaces () {
           '<div class="description">',
           `${r.description}`,
           '</div>',
+          `<div id="${r.id}" class="reviews"><h2></h2></div>`,
           '</article>'];
         $('SECTION.places').append(article.join(''));
+
+        $.get(`http://${HOST}:5001/api/v1/places/${r.id}/reviews`, (data, textStatus) => {
+          if (textStatus === 'success') {
+            reviewObj[r.id] = data;
+	    $(`#${r.id} h2`).text(`${data.length} Review(s)`);
+          }
+        });
       }
+      console.log(reviewObj);
     },
     error: function (error) {
       console.log(error);
