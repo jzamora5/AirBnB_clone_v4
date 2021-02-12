@@ -4,9 +4,7 @@ This is a complete full-stack web application, integrating a MySQL database and 
 
 It was based off the basic characteristics of the Airbnb platform.
 
-![](https://s3.amazonaws.com/intranet-projects-files/concepts/74/hbnb_step5.png)
-
-![](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2020/9/b68cd1e385963da099899f51ee5f3a6bbf0adcb3.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUWMNL5ANN%2F20210212%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210212T154046Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=2192a69138326bc86eb69e6d996051e4c1d9825876e57938110a2ab4a058d589)
+![](./readme_images/web_dynamic_diagram.png)
 
 # Iterations
 
@@ -16,7 +14,7 @@ The project was developed in several iterations, being V4 the last one. This ite
 
 The first iteration of the project consisted on building an interactive console in order to allow for development testing.
 
-![The Console](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/6/815046647d23428a14ca.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUWMNL5ANN%2F20210212%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210212T152825Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=36a670976b542ba984bb85e6e78ee7a9be0db662c4c2294318085d5b831e6cb9)
+![The Console](./readme_images/the_console_diagram.png)
 
 The Console was coded in order to work with a temporary storage engine based on JSON, and included the next features:
 
@@ -72,17 +70,17 @@ $
 
 This part of the project consisted in building the basic CSS and HTML source code.
 
-![](https://s3.amazonaws.com/intranet-projects-files/concepts/74/hbnb_step1.png)
+![](./readme_images/web_static_diagram.png)
 
-![](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2020/9/f47a405fccad371100ff9665dae9b3a84a471e62.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUWMNL5ANN%2F20210212%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210212T154740Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=a1413640abe6e2e40586c00d2d77446b0f066207c2af1ad960cb1cd208ef411a)
+![](./readme_images/web_static.png)
 
 ## MySQL
 
 This section consisted on the data modeling for the relational database in MySQL.
 
-![](https://s3.amazonaws.com/intranet-projects-files/concepts/74/hbnb_step2.png)
+![](./readme_images/mysql_diagram.png)
 
-![](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2020/9/daaef631636b40e0a279a8f240703e065f9d3481.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUWMNL5ANN%2F20210212%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210212T155037Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=c111856c357a312c3cf31f1113735711c877e7b6b29817420d241a59024a4d7f)
+![](./readme_images/mysql_model.jpg)
 
 ## Web Framework
 
@@ -92,9 +90,9 @@ For this development, the MySQL database started being used in order to serve co
 
 All of the HTML and CSS source code started being hosted in the server, and no items were hard coded, but instead produced through dynamic data integration.
 
-![](https://s3.amazonaws.com/intranet-projects-files/concepts/74/hbnb_step3.png)
+![](./readme_images/web_framework.jpg)
 
-![](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2020/9/bf248a63c15a746ad694acffdd56d80281782c71.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUWMNL5ANN%2F20210212%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210212T155137Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=9db02fb354e84f26b389b98bd448812bc0e1276ed11239c3ff1506a123008f08)
+![](./readme_images/web_framework_diagram.png)
 
 ## RESTful API
 
@@ -102,7 +100,7 @@ Although the Server Side Render with Flask and Jinja was interesting, this secti
 
 This Application Programming Interface was built with Flask and SQLAlchemy in order to work with MySQL and respond to HTTP requests.
 
-![](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2020/9/02078cd7f0573885c85a225c7436584a5afea1f9.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUWMNL5ANN%2F20210212%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210212T155744Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=ca7db9cb54ede7b9854b2f022e2de0df562885e0936873925eb49e129f634b4b)
+![](./readme_images/restful_api_diagram.png)
 
 The endpoints can be seen below.
 
@@ -197,7 +195,7 @@ This was the final iteration of the project and consisted in changing the Server
 
 ![Image result for jquery and javascript](https://miro.medium.com/max/600/1*8Whvj5G9f5DVmCBIzywYww.png)
 
-![](https://s3.amazonaws.com/intranet-projects-files/concepts/74/hbnb_step5.png)
+![](./readme_images/web_dynamic_diagram.png)
 
 # Challenges and Future Features
 
