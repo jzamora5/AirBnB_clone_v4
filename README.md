@@ -212,4 +212,5 @@ For future projects, this serves as a great base for beginning to understand oth
 🎯 I also studied Sound Engineering some years ago, and I love music, videogames, and audiovisual media.
 
 🔹 [LinkedIn](https://www.linkedin.com/in/jhoan-stiven-zamora-caicedo/)
+
 🔹 [Twitter](https://twitter.com/JhoanZamora10)
