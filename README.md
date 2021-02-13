@@ -191,7 +191,7 @@ The endpoints can be seen below.
 
 ## Web Dynamic
 
-This was the final iteration of the project and consisted in changing the Server Side Render for Client Based Render using JavaScript with JQuery, and the RESTful API from before.
+This was the final iteration of the project and consisted in changing the Server Side Render for Client Based Render using JavaScript with jQuery, and the RESTful API from before.
 
 ![Image result for jquery and javascript](https://miro.medium.com/max/600/1*8Whvj5G9f5DVmCBIzywYww.png)
 
